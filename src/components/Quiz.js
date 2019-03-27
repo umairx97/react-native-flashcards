@@ -130,12 +130,12 @@ class Quiz extends Component {
                 <Text style={styles.text}>Your answer is:</Text>
                 <CustomButton
                   text="Correct"
-                  style={{ backgroundColor: "green" }}
+                  style={{ backgroundColor: "#00CB50" }}
                   onPress={() => this.answerQuestion("correct")}
                 />
                 <CustomButton
                   text="Wrong"
-                  style={{ backgroundColor: "red" }}
+                  style={{ backgroundColor: "#FE332F" }}
                   onPress={() => this.answerQuestion("wrong")}
                 />
               </View>
