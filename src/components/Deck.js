@@ -47,7 +47,7 @@ class Deck extends Component {
 
     return (
       <View style={styles.container}>
-        <View>
+        <View style={styles.wrapper}>
           <Text style={styles.title}>{title}</Text>
           <Text style={{ textAlign: "center" }}>{`${count} cards`}</Text>
         </View>
@@ -76,9 +76,13 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 36,
-    color: "#708090",
+    color: "black",
     fontWeight: "bold",
     textAlign: "center"
+  },
+  wrapper: {
+    backgroundColor: "#28C1B5", 
+    padding: 10
   }
 });
 
