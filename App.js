@@ -1,34 +1,38 @@
-import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
-import { setLocalNotification } from './src/utils/helper';
+import React from "react";
+import { View, StyleSheet } from "react-native";
+import {
+  createStackNavigator,
+  createAppContainer,
+  createBottomTabNavigator
+} from "react-navigation";
+import { setLocalNotification } from "./src/utils/helper";
 
-import Quiz from './src/components/Quiz';
-import Deck from './src/components/Deck';
-import NewDeck from './src/components/NewDeck';
-import DeckList from './src/components/DeckList';
-import NewQuestion from './src/components/NewQuestion';
+import Quiz from "./src/components/Quiz";
+import Deck from "./src/components/Deck";
+import NewDeck from "./src/components/NewDeck";
+import DeckList from "./src/components/DeckList";
+import NewQuestion from "./src/components/NewQuestion";
 
 const RootStack = createStackNavigator(
   {
     DeckList: {
-      screen: DeckList,
+      screen: DeckList
     },
     Deck: {
-      screen: Deck,
+      screen: Deck
     },
     NewDeck: {
-      screen: NewDeck,
+      screen: NewDeck
     },
     NewQuestion: {
-      screen: NewQuestion,
+      screen: NewQuestion
     },
     Quiz: {
-      screen: Quiz,
+      screen: Quiz
     }
   },
   {
-    initialRouteName: 'DeckList'
+    initialRouteName: "DeckList"
   }
 );
 
@@ -36,9 +40,9 @@ const AppContainer = createAppContainer(RootStack);
 
 export default class App extends React.Component {
   componentDidMount() {
-    setLocalNotification()
+    setLocalNotification();
   }
-  
+
   render() {
     return (
       <View style={styles.container}>
@@ -51,6 +55,6 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
-  },
+    backgroundColor: "white"
+  }
 });
