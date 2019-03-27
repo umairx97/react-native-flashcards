@@ -49,7 +49,9 @@ class Deck extends Component {
       <View style={styles.container}>
         <View style={styles.wrapper}>
           <Text style={styles.title}>{title}</Text>
-          <Text style={{ textAlign: "center" }}>{`${count} cards`}</Text>
+          <Text
+            style={{ textAlign: "center" }}
+          >{`Number of cards: ${count}`}</Text>
         </View>
         <View>
           <CustomButton
@@ -78,11 +80,16 @@ const styles = StyleSheet.create({
     fontSize: 36,
     color: "black",
     fontWeight: "bold",
-    textAlign: "center"
+    textAlign: "center",
+    color: "white"
   },
   wrapper: {
-    backgroundColor: "#28C1B5", 
-    padding: 10
+    height: 200,
+    borderRadius: 10,
+    backgroundColor: "#28C19B",
+    padding: 10,
+    alignItems: "center",
+    justifyContent: "center"
   }
 });
 

@@ -86,14 +86,15 @@ const styles = StyleSheet.create({
     textAlign: "center",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#F8F8FF",
+    backgroundColor: "#28C19B",
     borderWidth: 1,
-    borderRadius: 3,
-    borderColor: "gray"
+    borderRadius: 5,
+    borderColor: "gray", 
+    padding: 10
   },
   title: {
     fontSize: 28,
-    color: "#708090",
+    color: "white",
     fontWeight: "bold",
     textAlign: "center"
   }
