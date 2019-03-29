@@ -1,5 +1,7 @@
 # FlashCards Mobile Application 
 
+Made by using Expo-Cli
+
 ## Instructions
 
 You must run:
@@ -13,4 +15,5 @@ Will install all dependecies.
 Runs the application.
 
 Tested on Android. (Samsung Galaxy S6)
+https://expo.io/@umairx97/react-native-flashcards
 
