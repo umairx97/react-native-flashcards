@@ -19,11 +19,9 @@ class NewDeck extends Component {
   constructor(props) {
     super(props);
     this.state = { userInput: "" };
-    this.handlePress = this.handlePress.bind(this);
-    this.handleChange = this.handleChange.bind(this);
   }
 
-  handlePress() {
+  handlePress = () => {
     const { userInput } = this.state;
     const { navigate } = this.props.navigation;
     const deckTitle = userInput ? userInput : "Untitled";
@@ -32,11 +30,11 @@ class NewDeck extends Component {
 
     saveDeckTitle(deckTitle);
     navigate("Deck", { title: deckTitle });
-  }
+  };
 
-  handleChange(userInput) {
+  handleChange = userInput => {
     this.setState({ userInput });
-  }
+  };
 
   render() {
     const { userInput } = this.state;

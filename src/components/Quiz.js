@@ -21,10 +21,6 @@ class Quiz extends Component {
       showQuestion: true,
       quizFinished: false
     };
-
-    this.toggleCard = this.toggleCard.bind(this);
-    this.restartQuiz = this.restartQuiz.bind(this);
-    this.answerQuestion = this.answerQuestion.bind(this);
   }
 
   componentDidMount() {
@@ -34,7 +30,8 @@ class Quiz extends Component {
     });
   }
 
-  restartQuiz() {
+  // Restarts the quiz and sets the values to default 
+  restartQuiz = () => {
     this.setState({
       current: 0,
       numCorrect: 0,
@@ -42,15 +39,16 @@ class Quiz extends Component {
       showQuestion: true,
       quizFinished: false
     });
-  }
+  };
 
-  toggleCard() {
+  toggleCard = () => {
     this.setState({
       showQuestion: !this.state.showQuestion
     });
-  }
+  };
 
-  answerQuestion(userAnswer) {
+  // Checks for user answers
+  answerQuestion = userAnswer => {
     const { current, questions, numCorrect, numIncorrect } = this.state;
     if (userAnswer === "correct") {
       this.setState({
@@ -71,7 +69,7 @@ class Quiz extends Component {
     } else {
       this.setState({ current: current + 1 });
     }
-  }
+  };
 
   render() {
     const {

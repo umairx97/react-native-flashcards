@@ -22,17 +22,14 @@ class NewQuestion extends Component {
       question: "",
       answer: ""
     };
-
-    this.handlePress = this.handlePress.bind(this);
-    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(userInput, which) {
-    if (which === "question") this.setState({ question: userInput });
-    else if (which === "answer") this.setState({ answer: userInput });
-  }
+  handleChange = (userInput, type) => {
+    if (type === "question") this.setState({ question: userInput });
+    else if (type === "answer") this.setState({ answer: userInput });
+  };
 
-  handlePress() {
+  handlePress = () => {
     const { question, answer } = this.state;
 
     if (!question && !answer) return alert("enter the question and answer");
@@ -45,7 +42,7 @@ class NewQuestion extends Component {
 
     this.setState({ question: "", answer: "" });
     navigate("Deck", { title });
-  }
+  };
 
   render() {
     const { question, answer } = this.state;
@@ -57,7 +54,7 @@ class NewQuestion extends Component {
           <TextInput
             value={question}
             style={styles.input}
-            placeholder={"Create a new question"}
+            placeholder={"Add a new question"}
             onChangeText={userInput => this.handleChange(userInput, "question")}
           />
         </View>
@@ -79,19 +76,15 @@ class NewQuestion extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    margin: 20,
-    justifyContent: "space-around"
+    padding: 10,
+    justifyContent: "space-around",
   },
   input: {
     fontSize: 24,
-    marginTop: 10,
-    marginBottom: 10,
+    marginBottom: 5,
     borderWidth: 1,
     borderColor: "steelblue",
-    paddingTop: 4,
-    paddingBottom: 4,
-    paddingLeft: 8,
-    paddingRight: 8
+    padding: 8
   },
   title: {
     fontSize: 36,
